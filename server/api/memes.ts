@@ -7,14 +7,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   let data = { data: [{ data: ' ' }] };
 
   if (search) {
-    data = await $fetch(`https://alpha-meme-maker.herokuapp.com/`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    data = await $fetch(`https://alpha-meme-maker.herokuapp.com/`);
   }
 
   res.writeHead(200, { 'Content-Type': 'application/json' });
